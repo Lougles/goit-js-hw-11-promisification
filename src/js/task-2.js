@@ -6,8 +6,8 @@ const users = [
 ];
 const toggleUserState = (allUsers, userName) => {
   return new Promise(res => {
-    res(allUsers).map(user =>
-    user.name === userName ? { ...user, active: !user.active } : user);
+    res(allUsers.map(user =>
+    user.name === userName ? { ...user, active: !user.active } : user));
   })
 };
 const logger = updatedUsers => console.table(updatedUsers);
